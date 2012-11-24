@@ -1,0 +1,13 @@
+﻿<Window x:Class="Banking.Splash"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="I am the Bank" Height="263" Width="503" Icon="/Bank;component/Currency%20Dollar.ico" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image Height="168" HorizontalAlignment="Left" Margin="299,10,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="170" Source="/Bank;component/bank-building-icon.png" />
+        <TextBox AcceptsReturn="True" Height="36" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBox1" Text="You are the Bank. Your goal is to make as much money as possible." TextWrapping="Wrap" VerticalAlignment="Top" Width="279" TextAlignment="Center" />
+        <TextBox AcceptsReturn="True" Height="39" HorizontalAlignment="Left" Margin="10,52,0,0" Name="textBox2" Text="You start with $10M. The board expects profits of at least 6% a year, but you can do much better." TextWrapping="Wrap" VerticalAlignment="Top" Width="279" TextAlignment="Center" />
+        <TextBox AcceptsReturn="True" Height="36" HorizontalAlignment="Left" Margin="10,97,0,0" Name="textBox3" Text="You can loan money, accept deposits, buy and sell stocks and borrow from bigger banks." TextWrapping="Wrap" VerticalAlignment="Top" Width="279" TextAlignment="Center" />
+        <TextBox AcceptsReturn="True" Height="39" HorizontalAlignment="Left" Margin="12,139,0,0" Name="textBox4" Text="You have 10 years, until January 2022, to make your fortune." TextWrapping="Wrap" VerticalAlignment="Top" Width="277" TextAlignment="Center" />
+        <Button Content="OK" Height="23" HorizontalAlignment="Left" Margin="74,189,0,0" Name="button1" VerticalAlignment="Top" Width="334" Click="button1_Click" />
+    </Grid>
+</Window>

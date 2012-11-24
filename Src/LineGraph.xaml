@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Banking.LineGraph"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="160" d:DesignWidth="473" Loaded="UserControl_Loaded">
+        <Grid Canvas.Left="0" Canvas.Top="0" Name="grid1">
+        <Border BorderBrush="Silver" BorderThickness="1" Canvas.Left="0" Canvas.Top="0" Name="border1" Margin="30,0,0,0" Panel.ZIndex="1" />
+        <Canvas HorizontalAlignment="Stretch" Name="canvas1" VerticalAlignment="Stretch" Margin="30,0,0,0">
+            <Label Canvas.Left="0" Canvas.Top="0" Content="Label" Height="28" Name="label1" FontSize="9" Foreground="#FF787373" />
+        </Canvas>
+        <Label Content="Max" Height="28" HorizontalAlignment="Left" Margin="-2,-4,0,0" Name="labelMax" VerticalAlignment="Top" FontSize="9" Foreground="#FF787373" FontFamily="Arial" />
+        <Label Content="Min" FontSize="9" Foreground="#FF787373" HorizontalAlignment="Left" Margin="-2,0,0,-5" Name="labelMin" Height="28" VerticalAlignment="Bottom" FontFamily="Arial" />
+    </Grid>
+</UserControl>

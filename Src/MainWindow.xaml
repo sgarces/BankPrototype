@@ -1,0 +1,223 @@
+﻿<Window x:Class="Banking.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="I am the Bank" Height="548" Width="698" ResizeMode="NoResize" xmlns:my="clr-namespace:SimpleWPFChart" xmlns:my1="clr-namespace:Banking" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Icon="/Bank;component/Currency%20Dollar.png">
+    <Grid>
+        <TabControl Name="tabControl1" HorizontalAlignment="Left" Width="471" Height="520" VerticalAlignment="Top">
+            <TabItem Header="Main" Name="tabItem1">
+                <Grid>
+                    <GroupBox Header="Montly Results" Height="324" HorizontalAlignment="Left" Margin="6,0,0,0" Name="groupBox9" VerticalAlignment="Top" Width="226" BorderBrush="Black">
+                        <Grid>
+                            <Label Content="Loans Interest:" Height="28" HorizontalAlignment="Left" Margin="22,6,0,0" Name="label104" VerticalAlignment="Top" />
+                            <Label Content="Investments:" Height="28" HorizontalAlignment="Left" Margin="25,109,0,0" Name="label105" VerticalAlignment="Top" />
+                            <Label Content="Debt Interest:" Height="28" HorizontalAlignment="Left" Margin="18,138,0,0" Name="label107" VerticalAlignment="Top" />
+                            <Label Content="Deposits Interest:" Height="28" HorizontalAlignment="Left" Margin="9,82,0,0" Name="label108" VerticalAlignment="Top" />
+                            <Label Content="Banking Fees:" Height="28" HorizontalAlignment="Left" Margin="27,56,0,0" Name="label109" VerticalAlignment="Top" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="103,6,0,0" Name="textMonthlyResults_LoansInterest" VerticalAlignment="Top" Width="100" IsReadOnly="True" Background="#FFE8E8E8" Text=""/>
+                            <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="103,59,0,0" Name="textMonthlyResults_BankingFees" VerticalAlignment="Top" Width="100" />
+                            <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="103,111,0,0" Name="textMonthlyResults_Stocks" VerticalAlignment="Top" Width="100" />
+                            <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="103,139,0,0" Name="textMonthlyResults_DebtInterest" VerticalAlignment="Top" Width="100" />
+                            <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="103,85,0,0" Name="textMonthlyResults_DepositsInterest" VerticalAlignment="Top" Width="100" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="103,167,0,0" Name="textMonthlyResults_Total" VerticalAlignment="Top" Width="100" Background="#FFE8E8E8" IsReadOnly="True" FontWeight="Bold" FontSize="12" />
+                            <Label Content="PROFIT:" Height="28" HorizontalAlignment="Left" Margin="32,163,0,0" Name="label112" VerticalAlignment="Top" FontWeight="Bold" Width="70" FontSize="14" />
+                            <Label Content="Loans Defaulted:" HorizontalAlignment="Left" Margin="15,29,0,0" Name="label31" Height="25" VerticalAlignment="Top" />
+                            <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="103,32,0,0" Name="textMonthlyResults_LoansDefaulted" Text="" VerticalAlignment="Top" Width="100" />
+                            <Label Content="New Loans:" Margin="34,243,0,0" Name="label32" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="67" />
+                            <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="103,245,0,0" Name="textMonthlyResults_NewLoans" Text="" VerticalAlignment="Top" Width="86" />
+                            <Label Content="New Deposits:" Height="28" HorizontalAlignment="Left" Margin="21,273,0,0" Name="label15" VerticalAlignment="Top" />
+                            <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="103,275,0,0" Name="textMonthlyResults_NewDeposits" VerticalAlignment="Top" Width="87" />
+                        </Grid>
+                    </GroupBox>
+                    <Image Height="117" HorizontalAlignment="Left" Margin="252,6,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="181" Source="/Bank;component/Wall-Street.jpg" />
+                    <GroupBox Header="Projections" Height="79" HorizontalAlignment="Left" Margin="242,246,0,0" Name="groupBox2" VerticalAlignment="Top" Width="200" BorderBrush="#FFBA9900" Foreground="#FFBA9900">
+                        <Grid>
+                        <TextBox Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="84,4,0,0" Name="textNewLoans" VerticalAlignment="Top" Width="95" Background="#FFE8E8E8" />
+                            <Label Content="New Loans:" Height="28" HorizontalAlignment="Left" Margin="15,4,0,0" Name="label12" VerticalAlignment="Top" Foreground="#FFBA9900" />
+                            <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="84,31,0,0" Name="textNewDeposits" VerticalAlignment="Top" Width="95" />
+                            <Label Content="New Deposits:" Foreground="#FFBA9900" Height="28" HorizontalAlignment="Left" Margin="6,31,0,0" Name="label21" VerticalAlignment="Top" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Loans &amp; Deposits Instructions" Height="124" HorizontalAlignment="Left" Margin="6,340,0,0" Name="groupBox1" VerticalAlignment="Top" Width="440" Foreground="#FF20AA00" BorderBrush="#FF20AA00">
+                        <Grid>
+                            <Label Content="Loans Interest:" Height="28" HorizontalAlignment="Left" Margin="-3,21,0,0" Name="label7" VerticalAlignment="Top" Foreground="#FF20AA00" Width="84" />
+                            <Label Content="Loans Risk:" Height="28" HorizontalAlignment="Left" Margin="12,65,0,0" Name="label8" VerticalAlignment="Top" Foreground="#FF20AA00" Width="67" />
+                            <Slider Height="23" HorizontalAlignment="Left" Margin="81,23,0,0" Name="sliderSetLoanInterest" VerticalAlignment="Top" Width="108" ValueChanged="sliderSetLoanInterest_ValueChanged" Minimum="0.01" Maximum="10" Panel.ZIndex="3" />
+                            <TextBlock HorizontalAlignment="Left" Margin="76,6,0,0" Name="textBlockLoanInterest" Text="TextBlock" Width="117" Foreground="#FF20AA00" TextAlignment="Center" Height="20" VerticalAlignment="Top" IsHitTestVisible="False" />
+                            <Slider Height="23" HorizontalAlignment="Left" Margin="79,68,0,0" Name="sliderSetLoanRisk" VerticalAlignment="Top" Width="108" ValueChanged="sliderSetLoanRisk_ValueChanged" Minimum="0.01" Maximum="3" Panel.ZIndex="3" />
+                            <TextBlock Height="23" HorizontalAlignment="Left" Margin="68,53,0,0" Name="textBlockLoanRisk" Text="TextBlock" VerticalAlignment="Top" Width="127" TextAlignment="Center" Foreground="#FF20AA00" IsHitTestVisible="False" />
+                            <Label Content="Deposits Interest:" Foreground="#FF20AA00" Height="28" HorizontalAlignment="Left" Margin="213,23,0,0" Name="label9" VerticalAlignment="Top" Width="100" />
+                            <Label Content="Banking Fees:" Foreground="#FF20AA00" Height="28" HorizontalAlignment="Left" Margin="232,65,0,0" Name="label10" VerticalAlignment="Top" Width="79" />
+                            <Slider Height="23" HorizontalAlignment="Left" Margin="313,25,0,0" Maximum="7" Minimum="0.01" Name="sliderDepositsInterest" VerticalAlignment="Top" Width="108" ValueChanged="sliderDepositsInterest_ValueChanged" Panel.ZIndex="3" />
+                            <TextBlock Foreground="#FF20AA00" Height="20" HorizontalAlignment="Left" Margin="302,9,0,0" Name="textBlockDepositInterest" Text="TextBlock" TextAlignment="Center" VerticalAlignment="Top" Width="117" IsHitTestVisible="False" />
+                            <Slider Height="23" HorizontalAlignment="Left" Margin="311,68,0,0" Maximum="50" Minimum="0" Name="sliderBankingFees" VerticalAlignment="Top" Width="108" ValueChanged="sliderBankingFees_ValueChanged" Panel.ZIndex="3" />
+                            <TextBlock Foreground="#FF20AA00" Height="23" HorizontalAlignment="Left" Margin="294,52,0,0" Name="textBlockBankingFees" Text="TextBlock" TextAlignment="Center" VerticalAlignment="Top" Width="127" IsHitTestVisible="False" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Leverage" Height="112" HorizontalAlignment="Left" Margin="242,127,0,0" Name="groupBox3" VerticalAlignment="Top" Width="208" BorderBrush="#FF20AA00" Foreground="#FF20AA00">
+                        <Grid>
+                            <Button Content="Borrow Money" Height="23" HorizontalAlignment="Left" Margin="106,26,0,0" Name="buttonBorrowMoney" VerticalAlignment="Top" Width="84" Foreground="#FF20AA00" Click="borrowMoney_Click" />
+                            <Slider Height="23" HorizontalAlignment="Left" Margin="6,53,0,0" Maximum="100000000" Minimum="0" Name="sliderBorrowAmount" Panel.ZIndex="3" VerticalAlignment="Top" Width="184" ValueChanged="sliderBorrowAmount_ValueChanged" Value="0" />
+                            <TextBlock Foreground="#FF20AA00" Height="20" HorizontalAlignment="Left" IsHitTestVisible="False" Margin="-6,44,0,0" Name="textBlockBorrowAmount" Text="TextBlock" TextAlignment="Center" VerticalAlignment="Top" Width="117" />
+                            <TextBlock Foreground="#FF20AA00" Height="20" HorizontalAlignment="Left" IsHitTestVisible="False" Margin="97,10,0,0" Name="textBlockBorrowInterest" Text="Rate:" TextAlignment="Center" VerticalAlignment="Top" Width="98" />
+                            <Slider Height="23" HorizontalAlignment="Left" Margin="6,22,0,0" Maximum="50" Minimum="0" Name="sliderBorrowPeriod" Panel.ZIndex="3" VerticalAlignment="Top" Width="88" ValueChanged="sliderBorrowPeriod_ValueChanged" />
+                            <TextBlock Foreground="#FF20AA00" Height="20" HorizontalAlignment="Left" IsHitTestVisible="False" Margin="-6,13,0,0" Name="textBlockBorrowPeriod" Text="TextBlock" TextAlignment="Center" VerticalAlignment="Top" Width="117" />
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Evolution" Name="tabItem7">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140*" />
+                        <ColumnDefinition Width="320*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Height="381" HorizontalAlignment="Left" Margin="23,35,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Width="423" Source="/Bank;component/11933.png" OpacityMask="#2B000000" Grid.ColumnSpan="2" />
+                    <Label Content="Cash:" Height="28" HorizontalAlignment="Left" Margin="11,6,0,0" Name="label98" VerticalAlignment="Top" FontWeight="Bold" />
+                    <Label Content="Stocks:" Height="28" HorizontalAlignment="Left" Margin="3,393,0,0" Name="label99" VerticalAlignment="Top" FontWeight="Bold" />
+                    <Label Content="Loans:" Height="28" HorizontalAlignment="Left" Margin="10,200,0,0" Name="label101" VerticalAlignment="Top" FontWeight="Bold" />
+                    <Label Content="Deposits:" Height="28" HorizontalAlignment="Left" Margin="-5,100,0,0" Name="label102" VerticalAlignment="Top" FontWeight="Bold" Width="67" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="54,6,0,0" Name="textCash" VerticalAlignment="Top" Width="97" Background="#FFE8E8E8" IsReadOnly="True" Grid.ColumnSpan="2" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="54,393,0,0" Name="textStocks" VerticalAlignment="Top" Width="97" Grid.ColumnSpan="2" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="54,103,0,0" Name="textDeposits" VerticalAlignment="Top" Width="97" Grid.ColumnSpan="2" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="54,201,0,0" Name="textLoans" VerticalAlignment="Top" Width="97" Grid.ColumnSpan="2" />
+                    <my1:LineGraph HorizontalAlignment="Left" Margin="54,32,0,0" x:Name="lineGraphCash" VerticalAlignment="Top" Height="64" Width="177" Grid.ColumnSpan="2" />
+                    <my1:LineGraph Height="64" HorizontalAlignment="Left" Margin="54,419,0,0" x:Name="lineGraphStocks" VerticalAlignment="Top" Width="177" Grid.ColumnSpan="2" />
+                    <my1:LineGraph Height="64" HorizontalAlignment="Left" Margin="55,128,0,0" x:Name="lineGraphDeposits" VerticalAlignment="Top" Width="176" Grid.ColumnSpan="2" />
+                    <my1:LineGraph Height="64" HorizontalAlignment="Left" Margin="55,227,0,0" x:Name="lineGraphLoans" VerticalAlignment="Top" Width="176" Grid.ColumnSpan="2" />
+                    <Label Content="Debt:" Height="28" HorizontalAlignment="Left" Margin="12,297,0,0" Name="label1" VerticalAlignment="Top" FontWeight="Bold" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="55,297,0,0" Name="textDebt" VerticalAlignment="Top" Width="97" Grid.ColumnSpan="2" />
+                    <my1:LineGraph Height="64" HorizontalAlignment="Left" Margin="55,323,0,0" x:Name="lineGraphDebt" VerticalAlignment="Top" Width="177" Grid.ColumnSpan="2" />
+                    <Label Content="Debt Interest:" Height="28" HorizontalAlignment="Left" Margin="39,297,0,0" Name="label5" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold" Width="102" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="129,297,0,0" Name="textDebtInterest" VerticalAlignment="Top" Width="97" Grid.Column="1" />
+                    <my1:LineGraph Height="64" HorizontalAlignment="Left" Margin="129,323,0,0" x:Name="lineGraphDebtInterest" VerticalAlignment="Top" Width="177" Grid.Column="1" />
+                    <Label Content="Deposits Cost:" Height="28" HorizontalAlignment="Left" Margin="41,105,0,0" Name="label6" VerticalAlignment="Top" Grid.Column="1" Width="108" FontWeight="Bold" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="129,105,0,0" Name="textDepositsInterest" VerticalAlignment="Top" Width="97" Grid.Column="1" />
+                    <my1:LineGraph Height="64" HorizontalAlignment="Left" Margin="129,131,0,0" x:Name="lineGraphDepositsInterest" VerticalAlignment="Top" Width="177" Grid.Column="1" />
+                    <Label Content="Loans Interest:" Height="28" HorizontalAlignment="Left" Margin="34,201,0,0" Name="label11" VerticalAlignment="Top" Grid.Column="1" Width="102" FontWeight="Bold" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="129,201,0,0" Name="textLoansInterest" VerticalAlignment="Top" Width="97" Grid.Column="1" />
+                    <my1:LineGraph Height="64" HorizontalAlignment="Left" Margin="129,227,0,0" x:Name="lineGraphLoansInterest" VerticalAlignment="Top" Width="177" Grid.Column="1" />
+                    <Label Content="Stocks Gain/Loss:" Height="28" HorizontalAlignment="Left" Margin="18,393,0,0" Name="label13" VerticalAlignment="Top" Grid.Column="1" Width="156" FontWeight="Bold" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="129,393,0,0" Name="textStocksGainLoss" VerticalAlignment="Top" Width="97" Grid.Column="1" />
+                    <my1:LineGraph Height="64" HorizontalAlignment="Left" Margin="129,419,0,0" x:Name="lineGraphStocksGainLoss" VerticalAlignment="Top" Width="177" Grid.Column="1" />
+                    <Label Content="Total Defaults:" Height="28" HorizontalAlignment="Left" Margin="37,7,0,0" Name="label33" VerticalAlignment="Top" Grid.Column="1" FontWeight="Bold" Width="107" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="129,8,0,0" Name="textTotalHistoricalDefaults" VerticalAlignment="Top" Width="97" Grid.Column="1" />
+                    <my1:LineGraph Height="64" HorizontalAlignment="Left" Margin="129,32,0,0" x:Name="lineGraphTotalDefaults" VerticalAlignment="Top" Width="177" Grid.Column="1" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Investments" Name="tabItem3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="216" />
+                        <ColumnDefinition Width="358" />
+                        <ColumnDefinition Width="55*" />
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Header="Stock Market" HorizontalAlignment="Left" Margin="6,6,0,0" Name="groupBox4" Width="443" Height="307" VerticalAlignment="Top" BorderBrush="Black" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Label Content="Energy:" Height="28" HorizontalAlignment="Left" Margin="5,72,0,0" Name="label25" VerticalAlignment="Top" FontWeight="Bold" />
+                            <Label Content="Transportation:" Height="28" HorizontalAlignment="Left" Margin="-3,7,0,0" Name="label26" VerticalAlignment="Top" FontWeight="Bold" />
+                            <Label Content="Financial:" Height="28" HorizontalAlignment="Left" Margin="6,143,0,0" Name="label27" VerticalAlignment="Top" FontWeight="Bold" />
+                            <Label Content="Healthcare:" Height="28" HorizontalAlignment="Left" Margin="214,144,0,0" Name="label28" VerticalAlignment="Top" FontWeight="Bold" />
+                            <Label Content="Services:" Height="28" HorizontalAlignment="Left" Margin="215,5,0,0" Name="label29" VerticalAlignment="Top" FontWeight="Bold" />
+                            <Label Content="Technology:" Height="28" HorizontalAlignment="Left" Margin="214,69,0,0" Name="label30" VerticalAlignment="Top" FontWeight="Bold" />
+                            <Label Content="1m:" Height="28" Margin="5,20,0,0" Name="label37" VerticalAlignment="Top" HorizontalAlignment="Left" Width="29" />
+                            <Label Content="6m:" Height="28" HorizontalAlignment="Left" Margin="5,34,0,0" Name="label38" VerticalAlignment="Top" />
+                            <Label Content="0%" Height="28" HorizontalAlignment="Left" Margin="32,20,0,0" Name="label_Transportation_1m" VerticalAlignment="Top" Width="50" />
+                            <Label Content="0%" HorizontalAlignment="Left" Margin="32,34,0,0" Name="label_Transportation_6m" Width="50" Height="28" VerticalAlignment="Top" />
+                            <Label Content="1m:" Height="28" HorizontalAlignment="Left" Margin="7,89,0,0" Name="label41" VerticalAlignment="Top" />
+                            <Label Content="6m:" Height="28" HorizontalAlignment="Left" Margin="6,102,0,0" Name="label42" VerticalAlignment="Top" />
+                            <Label Content="0%" Height="28" HorizontalAlignment="Left" Margin="34,89,0,0" Name="label_Energy_1m" VerticalAlignment="Top" Width="50" />
+                            <Label Content="0%" Height="28" HorizontalAlignment="Left" Margin="33,102,0,0" Name="label_Energy_6m" VerticalAlignment="Top" Width="50" />
+                            <Label Content="1m:" Height="28" Margin="6,161,0,0" Name="label45" VerticalAlignment="Top" HorizontalAlignment="Left" Width="29" />
+                            <Label Content="6m:" Height="28" HorizontalAlignment="Left" Margin="5,173,0,0" Name="label46" VerticalAlignment="Top" />
+                            <Label Content="0%" Height="28" HorizontalAlignment="Left" Margin="33,161,0,0" Name="label_Financial_1m" VerticalAlignment="Top" Width="50" />
+                            <Label Content="0%" Height="28" HorizontalAlignment="Left" Margin="32,173,0,0" Name="label_Financial_6m" VerticalAlignment="Top" Width="50" />
+                            <Label Content="1m:" Height="28" HorizontalAlignment="Left" Margin="217,21,0,0" Name="label49" VerticalAlignment="Top" />
+                            <Label Content="6m:" Height="28" HorizontalAlignment="Left" Margin="215,35,0,0" Name="label50" VerticalAlignment="Top" />
+                            <Label Content="0%" Height="28" HorizontalAlignment="Left" Margin="244,21,0,0" Name="label_Services_1m" VerticalAlignment="Top" Width="50" />
+                            <Label Content="0%" Height="28" HorizontalAlignment="Left" Margin="242,35,0,0" Name="label_Services_6m" VerticalAlignment="Top" Width="50" />
+                            <Label Content="1m:" Height="28" HorizontalAlignment="Left" Margin="218,84,0,0" Name="label53" VerticalAlignment="Top" />
+                            <Label Content="6m:" Height="28" HorizontalAlignment="Left" Margin="217,99,0,0" Name="label54" VerticalAlignment="Top" />
+                            <Label Content="0%" Height="28" HorizontalAlignment="Left" Margin="245,84,0,0" Name="label_Technology_1m" VerticalAlignment="Top" Width="50" />
+                            <Label Content="0%" Height="28" HorizontalAlignment="Left" Margin="244,99,0,0" Name="label_Technology_6m" VerticalAlignment="Top" Width="50" />
+                            <Label Content="1m:" Height="28" HorizontalAlignment="Left" Margin="217,161,0,0" Name="label57" VerticalAlignment="Top" />
+                            <Label Content="6m:" Height="28" HorizontalAlignment="Left" Margin="216,172,0,0" Name="label58" VerticalAlignment="Top" />
+                            <Label Content="0%" Height="28" HorizontalAlignment="Left" Margin="244,161,0,0" Name="label_Healthcare_1m" VerticalAlignment="Top" Width="50" />
+                            <Label Content="0%" Height="28" HorizontalAlignment="Left" Margin="243,172,0,0" Name="label_Healthcare_6m" VerticalAlignment="Top" Width="50" />
+                            <my1:LineGraph HorizontalAlignment="Left" Margin="86,7,0,0" x:Name="lineGraph_Transportation" VerticalAlignment="Top" Height="55" Width="120" />
+                            <my1:LineGraph HorizontalAlignment="Left" Margin="86,75,0,0" x:Name="lineGraph_Energy" Width="120" Height="55" VerticalAlignment="Top" />
+                            <my1:LineGraph Height="55" HorizontalAlignment="Left" Margin="86,147,0,0" x:Name="lineGraph_Financial" VerticalAlignment="Top" Width="120" />
+                            <my1:LineGraph Height="55" HorizontalAlignment="Left" Margin="295,8,0,0" x:Name="lineGraph_Services" VerticalAlignment="Top" Width="120" />
+                            <my1:LineGraph Height="55" HorizontalAlignment="Left" Margin="295,73,0,0" x:Name="lineGraph_Technology" VerticalAlignment="Top" Width="120" />
+                            <my1:LineGraph Height="55" HorizontalAlignment="Left" Margin="295,145,0,0" x:Name="lineGraph_Healthcare" VerticalAlignment="Top" Width="120" />
+                            <my1:LineGraph Height="72" HorizontalAlignment="Left" Margin="114,210,0,0" x:Name="lineGraphGlobalMarket" VerticalAlignment="Top" Width="166" />
+                            <Label Content="GLOBAL MARKET:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="5,223,0,0" Name="label3" VerticalAlignment="Top" />
+                            <Image Height="71" HorizontalAlignment="Left" Margin="304,209,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="100" Source="/Bank;component/me_853.jpg" />
+                        </Grid>
+                    </GroupBox>
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="87,323,0,0" Name="textBoxTransportation" VerticalAlignment="Top" Width="80" IsReadOnly="True" Background="#FFE8E8E8" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="87,352,0,0" Name="textBoxEnergy" VerticalAlignment="Top" Width="80" IsReadOnly="True" Background="#FFE8E8E8" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="87,381,0,0" Name="textBoxFinancial" VerticalAlignment="Top" Width="80" IsReadOnly="True" Background="#FFE8E8E8" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="97,324,0,0" Name="textBoxServices" VerticalAlignment="Top" Width="80" IsReadOnly="True" Background="#FFE8E8E8" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="97,353,0,0" Name="textBoxTechnology" VerticalAlignment="Top" Width="80" IsReadOnly="True" Background="#FFE8E8E8" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="97,382,0,0" Name="textBoxHealthcare" VerticalAlignment="Top" Width="80" IsReadOnly="True" Background="#FFE8E8E8" Grid.Column="1" />
+                    <Label Content="Energy:" Height="28" HorizontalAlignment="Left" Margin="35,347,0,0" Name="label34" VerticalAlignment="Top" />
+                    <Label Content="Transportation:" Height="28" HorizontalAlignment="Left" Margin="-2,318,0,0" Name="label35" VerticalAlignment="Top" />
+                    <Label Content="Financial:" Height="28" HorizontalAlignment="Left" Margin="27,376,0,0" Name="label36" VerticalAlignment="Top" />
+                    <Label Content="Healthcare:" Height="28" HorizontalAlignment="Left" Margin="27,379,0,0" Name="label39" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Services:" Height="28" HorizontalAlignment="Left" Margin="39,319,0,0" Name="label40" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Technology:" Height="28" HorizontalAlignment="Left" Margin="24,350,0,0" Name="label43" VerticalAlignment="Top" Grid.Column="1" />
+                    <Button Content="Buy" Height="23" HorizontalAlignment="Left" Margin="168,323,0,0" Name="buttonBuyTransportation" VerticalAlignment="Top" Width="30" Click="buttonBuyTransportation_Click" />
+                    <Button Content="Sell" Height="23" HorizontalAlignment="Left" Margin="196,323,0,0" Name="buttonSellTransportation" VerticalAlignment="Top" Width="30" Grid.ColumnSpan="2" Click="buttonSellTransportation_Click" />
+                    <Button Content="Buy" Height="23" HorizontalAlignment="Left" Margin="168,352,0,0" Name="buttonBuyEnergy" VerticalAlignment="Top" Width="30" Click="buttonBuyEnergy_Click" />
+                    <Button Content="Sell" Height="23" HorizontalAlignment="Left" Margin="196,352,0,0" Name="buttonSellEnergy" VerticalAlignment="Top" Width="30" Grid.ColumnSpan="2" Click="buttonSellEnergy_Click" />
+                    <Button Content="Buy" Height="23" HorizontalAlignment="Left" Margin="168,381,0,0" Name="buttonBuyFinancial" VerticalAlignment="Top" Width="30" Click="buttonBuyFinancial_Click" />
+                    <Button Content="Sell" Height="23" HorizontalAlignment="Left" Margin="196,381,0,0" Name="buttonSellFinancial" VerticalAlignment="Top" Width="30" Grid.ColumnSpan="2" Click="buttonSellFinancial_Click" />
+                    <Button Content="Buy" Height="23" HorizontalAlignment="Left" Margin="180,323,0,0" Name="buttonBuyServices" VerticalAlignment="Top" Width="30" Grid.Column="1" Click="buttonBuyServices_Click" />
+                    <Button Content="Sell" Height="23" HorizontalAlignment="Left" Margin="208,323,0,0" Name="buttonSellServices" VerticalAlignment="Top" Width="30" Grid.Column="1" Click="buttonSellServices_Click" />
+                    <Button Content="Buy" Height="23" HorizontalAlignment="Left" Margin="180,352,0,0" Name="buttonBuyTechnology" VerticalAlignment="Top" Width="30" Grid.Column="1" Click="buttonBuyTechnology_Click" />
+                    <Button Content="Sell" Height="23" HorizontalAlignment="Left" Margin="208,352,0,0" Name="buttonSellTechnology" VerticalAlignment="Top" Width="30" Grid.Column="1" Click="buttonSellTechnology_Click" />
+                    <Button Content="Buy" Height="23" HorizontalAlignment="Left" Margin="180,381,0,0" Name="buttonBuyHealthcare" VerticalAlignment="Top" Width="30" Grid.Column="1" Click="buttonBuyHealthcare_Click" />
+                    <Button Content="Sell" Height="23" HorizontalAlignment="Left" Margin="208,381,0,0" Name="buttonSellHealthcare" VerticalAlignment="Top" Width="30" Grid.Column="1" Click="buttonSellHealthcare_Click" />
+                    <my1:LineGraph Height="55" HorizontalAlignment="Left" Margin="21,410,0,0" x:Name="lineGraphInvestmentGainLoss" VerticalAlignment="Top" Width="98" Grid.Column="1" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="8,429,0,0" Name="textBoxTotalInvested" VerticalAlignment="Top" Width="87" />
+                    <Label Content="Total Invested:" Height="28" HorizontalAlignment="Left" Margin="0,408,0,0" Name="label44" VerticalAlignment="Top" FontWeight="Bold" />
+                    <RadioButton Content="Buy/Sell $100K" Grid.Column="1" HorizontalAlignment="Left" Margin="139,414,0,0" Name="radioButton10K" Width="105" IsChecked="True" Checked="radioButton10K_Checked" Height="16" VerticalAlignment="Top" />
+                    <RadioButton Content="Buy/Sell $10M" Grid.Column="1" Height="16" HorizontalAlignment="Left" Margin="139,447,0,0" Name="radioButton500K" VerticalAlignment="Top" Width="86" Checked="radioButton500K_Checked" />
+                    <RadioButton Content="Buy/Sell $1M" Grid.Column="1" Height="16" HorizontalAlignment="Left" Margin="139,431,0,0" Name="radioButton100K" VerticalAlignment="Top" Width="105" Checked="radioButton100K_Checked" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="145,447,0,0" Name="textBoxInvestmentGainLoss" VerticalAlignment="Top" Width="89" Grid.ColumnSpan="2" />
+                    <Label Content="Inv. Gain/Loss:" FontWeight="Bold" HorizontalAlignment="Left" Margin="142,403,0,0" Name="label47" Height="28" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <TextBox Background="#FFE8E8E8" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="145,423,0,0" Name="textBoxAccInvestmentGainLoss" VerticalAlignment="Top" Width="89" Grid.ColumnSpan="2" />
+                    <Label Content="Total" Height="28" HorizontalAlignment="Left" Margin="110,421,0,0" Name="label48" VerticalAlignment="Top" />
+                    <Label Content="Month" Height="28" HorizontalAlignment="Left" Margin="105,442,0,0" Name="label51" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <my1:LineGraph Margin="0,12,5,0" x:Name="lineGraphAssetHistory" VerticalAlignment="Top" Height="109" HorizontalAlignment="Right" Width="200" />
+        <GroupBox Header="Current Position" Height="222" HorizontalAlignment="Right" Margin="0,123,5,0" Name="groupBox10" VerticalAlignment="Top" Width="200" BorderBrush="Black">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45*" />
+                    <ColumnDefinition Width="83*" />
+                    <ColumnDefinition Width="299*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Cash:" Height="28" HorizontalAlignment="Left" Margin="7,13,0,0" Name="label4" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" />
+                <TextBox Background="#FFE8E8E8" HorizontalAlignment="Left" IsReadOnly="True" Margin="15,12,0,0" Name="textCash2" Width="110" Grid.Column="2" Height="24" VerticalAlignment="Top" />
+                <Label Content="Stocks:" Height="28" HorizontalAlignment="Left" Margin="19,37,0,0" Name="label14" VerticalAlignment="Top" Grid.ColumnSpan="3" />
+                <TextBox Background="#FFE8E8E8" HorizontalAlignment="Left" IsReadOnly="True" Margin="15,38,0,0" Name="textStocks2" Width="110" Grid.Column="2" Height="24" VerticalAlignment="Top" />
+                <Label Content="Deposits:" Height="28" HorizontalAlignment="Left" Margin="13,59,0,0" Name="label16" VerticalAlignment="Top" Grid.ColumnSpan="3" />
+                <TextBox Background="#FFE8E8E8" Grid.Column="2" Height="24" HorizontalAlignment="Left" IsReadOnly="True" Margin="15,64,0,0" Name="textDeposits2" VerticalAlignment="Top" Width="110" />
+                <Label Content="Loans:" Height="28" HorizontalAlignment="Left" Margin="2,85,0,0" Name="label20" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" />
+                <TextBox Background="#FFE8E8E8" Grid.Column="2" Height="24" HorizontalAlignment="Left" IsReadOnly="True" Margin="15,90,0,0" Name="textLoans2" VerticalAlignment="Top" Width="110" />
+                <TextBox Background="#FFE8E8E8" Grid.Column="2" Height="24" HorizontalAlignment="Left" IsReadOnly="True" Margin="15,168,0,0" Name="textTotalAssets2" VerticalAlignment="Top" Width="110" FontWeight="Bold" FontSize="12" />
+                <Label Content="ASSETS:" FontWeight="Bold" Height="28" HorizontalAlignment="Left" Margin="4,169,0,0" Name="label22" VerticalAlignment="Top" Width="71" Grid.ColumnSpan="3" FontSize="13" />
+                <Label Content="Debt:" Grid.ColumnSpan="2" Height="28" HorizontalAlignment="Left" Margin="7,141,0,0" Name="label52" VerticalAlignment="Top" Grid.Column="1" />
+                <TextBox Background="#FFE8E8E8" Grid.Column="2" Height="24" HorizontalAlignment="Left" IsReadOnly="True" Margin="15,142,0,0" Name="textDebt2" VerticalAlignment="Top" Width="110" />
+                <Label Content="Reserve:" Grid.ColumnSpan="3" Height="28" HorizontalAlignment="Left" Margin="16,114,0,0" Name="label2" VerticalAlignment="Top" Width="54" />
+                <TextBox Background="#FFE8E8E8" Grid.Column="2" Height="24" HorizontalAlignment="Left" IsReadOnly="True" Margin="15,116,0,0" Name="textBoxLoanReserve" VerticalAlignment="Top" Width="110" />
+            </Grid>
+        </GroupBox>
+        <Button Content="Advance Month" Height="46" HorizontalAlignment="Right" Margin="0,385,45,0" Name="buttonAdvanceMonth" VerticalAlignment="Top" Width="149" FontSize="16" FontWeight="Bold" Click="buttonAdvanceMonth_Click" />
+        <Label Content="Month Year" Height="28" Margin="0,351,45,0" Name="labelMonthYear" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right" Width="148" />
+        <Button Content="?" Height="23" Margin="0,351,5,0" Name="buttonHelp" VerticalAlignment="Top" Click="buttonHelp_Click" HorizontalAlignment="Right" Width="36" />
+    </Grid>
+</Window>
